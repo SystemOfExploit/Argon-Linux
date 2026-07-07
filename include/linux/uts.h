@@ -6,7 +6,7 @@
  * Defines for what uname() should return 
  */
 #ifndef UTS_SYSNAME
-#define UTS_SYSNAME "Argon-Linux"
+#define UTS_SYSNAME "Argon-Linux-7.2-rc2"
 #endif
 
 #ifndef UTS_NODENAME

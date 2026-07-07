@@ -22,5 +22,5 @@ struct uts_namespace init_uts_ns = {
 
 /* FIXED STRINGS! Don't touch! */
 const char linux_banner[] =
-	"Argon-Linux version " UTS_RELEASE " (" LINUX_COMPILE_BY "@"
+	"Argon-Linux-7.2-rc2 version " UTS_RELEASE " (" LINUX_COMPILE_BY "@"
 	LINUX_COMPILE_HOST ") (" LINUX_COMPILER ") " UTS_VERSION "\n";
