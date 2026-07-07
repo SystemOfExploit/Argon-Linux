@@ -37,9 +37,7 @@ int io_madvise_prep(struct io_kiocb *req, const struct io_uring_sqe *sqe)
 		return -EINVAL;
 
 	ma->addr = READ_ONCE(sqe->addr);
-	ma->len = READ_ONCE(sqe->off);
-	if (!ma->len)
-		ma->len = READ_ONCE(sqe->len);
+	ma->len = READ_ONCE(sqe->len);
 	ma->advice = READ_ONCE(sqe->fadvise_advice);
 	req->flags |= REQ_F_FORCE_ASYNC;
 	return 0;
@@ -84,9 +82,7 @@ int io_fadvise_prep(struct io_kiocb *req, const struct io_uring_sqe *sqe)
 		return -EINVAL;
 
 	fa->offset = READ_ONCE(sqe->off);
-	fa->len = READ_ONCE(sqe->addr);
-	if (!fa->len)
-		fa->len = READ_ONCE(sqe->len);
+	fa->len = READ_ONCE(sqe->len);
 	fa->advice = READ_ONCE(sqe->fadvise_advice);
 	if (io_fadvise_force_async(fa))
 		req->flags |= REQ_F_FORCE_ASYNC;
