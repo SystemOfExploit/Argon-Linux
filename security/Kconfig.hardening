@@ -214,6 +214,7 @@ menu "Bounds checking"
 config FORTIFY_SOURCE
 	bool "Harden common str/mem functions against buffer overflows"
 	depends on ARCH_HAS_FORTIFY_SOURCE
+	default y
 	help
 	  Detect overflows of buffers in common string and memory functions
 	  where the compiler can determine and validate the buffer sizes.
@@ -221,6 +222,7 @@ config FORTIFY_SOURCE
 config HARDENED_USERCOPY
 	bool "Harden memory copies between kernel and userspace"
 	imply STRICT_DEVMEM
+	default y
 	help
 	  This option checks for obviously wrong memory regions when
 	  copying memory to/from the kernel (via copy_to_user() and
@@ -233,6 +235,7 @@ config HARDENED_USERCOPY
 config HARDENED_USERCOPY_DEFAULT_ON
 	bool "Harden memory copies by default"
 	depends on HARDENED_USERCOPY
+	default y
 	default HARDENED_USERCOPY
 	help
 	  This has the effect of setting "hardened_usercopy=on" on the kernel
@@ -264,6 +267,7 @@ config RUST_BITMAP_HARDENED
 config BUG_ON_DATA_CORRUPTION
 	bool "Trigger a BUG when data corruption is detected"
 	select LIST_HARDENED
+	default y
 	help
 	  Select this option if the kernel should BUG when it encounters
 	  data corruption in kernel memory structures when they get checked
