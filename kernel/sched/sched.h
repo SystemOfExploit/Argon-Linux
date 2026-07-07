@@ -3103,7 +3103,7 @@ static inline void attach_one_task(struct rq *rq, struct task_struct *p)
 #ifdef CONFIG_PREEMPT_RT
 # define SCHED_NR_MIGRATE_BREAK 8
 #else
-# define SCHED_NR_MIGRATE_BREAK 32
+# define SCHED_NR_MIGRATE_BREAK 64
 #endif
 
 extern __read_mostly unsigned int sysctl_sched_nr_migrate;
