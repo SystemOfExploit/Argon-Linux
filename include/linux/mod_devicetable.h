@@ -10,8 +10,7 @@
 
 #ifdef __KERNEL__
 #include <linux/types.h>
-#endif
-
+#else
 #include "device-id/acpi.h"
 #include "device-id/amba.h"
 #include "device-id/ap.h"
@@ -68,6 +67,7 @@
 #include "device-id/wmi.h"
 #include "device-id/x86_cpu.h"
 #include "device-id/zorro.h"
+#endif
 
 /*
  * Generic table type for matching CPU features.

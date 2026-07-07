@@ -67,6 +67,7 @@ config USB4_DMA_TEST
 config USB4_STREAM
 	tristate "Stream data over Thunderbolt/USB4 cable"
 	depends on USB4_CONFIGFS
+	default y
 	help
 	  This adds support for USB4STREAM protocol that allows two
 	  hosts to stream data directly over Thunderbolt/USB4 cable
