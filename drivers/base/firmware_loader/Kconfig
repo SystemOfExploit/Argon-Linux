@@ -93,6 +93,7 @@ config EXTRA_FIRMWARE_DIR
 
 config FW_LOADER_USER_HELPER
 	bool "Enable the firmware sysfs fallback mechanism"
+	default y
 	select FW_LOADER_SYSFS
 	select FW_LOADER_PAGED_BUF
 	help
@@ -167,6 +168,7 @@ config FW_LOADER_USER_HELPER
 config FW_LOADER_USER_HELPER_FALLBACK
 	bool "Force the firmware sysfs fallback mechanism when possible"
 	depends on FW_LOADER_USER_HELPER
+	default y
 	help
 	  Enabling this option forces a sysfs userspace fallback mechanism
 	  to be used for all firmware requests which explicitly do not disable a

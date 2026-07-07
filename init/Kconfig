@@ -251,7 +251,7 @@ config COMPILE_TEST
 
 config WERROR
 	bool "Compile the kernel with warnings as errors"
-	default COMPILE_TEST
+	default n
 	help
 	  A kernel build should not cause any compiler warnings, and this
 	  enables the '-Werror' (for C) and '-Dwarnings' (for Rust) flags
@@ -1612,6 +1612,12 @@ config CC_OPTIMIZE_FOR_PERFORMANCE
 	  This is the default optimization level for the kernel, building
 	  with the "-O2" compiler flag for best performance and most
 	  helpful compile-time warnings.
+
+config CC_OPTIMIZE_FOR_PERFORMANCE_O3
+	bool "Optimize more for performance (-O3)"
+	help
+	  Choosing this option will pass "-O3" to your compiler, enabling more aggressive
+	  optimizations (such as loop vectorization, function inlining) for performance.
 
 config CC_OPTIMIZE_FOR_SIZE
 	bool "Optimize for size (-Os)"

@@ -54,7 +54,7 @@
 #include <trace/events/oom.h>
 
 static int sysctl_panic_on_oom;
-static int sysctl_oom_kill_allocating_task;
+static int sysctl_oom_kill_allocating_task = 1;
 static int sysctl_oom_dump_tasks = 1;
 
 /*
